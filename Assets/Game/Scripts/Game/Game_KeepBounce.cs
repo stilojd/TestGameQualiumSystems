@@ -29,7 +29,6 @@ namespace Assets.Game.Scripts.Game
 
         public void LoadPrefabs()
         {
-            myTimer.Restart();
             DeletePrefaps();
 
             var platformPrefab = Resources.Load<GameObject>(shapeOfPlatform.name);
@@ -57,6 +56,7 @@ namespace Assets.Game.Scripts.Game
 
         public void StartGame()
         {
+            myTimer.Restart();
             gameMenuManager.ClosePanel(GameMenu.StartMenu);
             myTimer.Start();
             platformContfoller.gameObject.GetComponent<PlatformContfoller>().enabled = true;
